@@ -28,7 +28,6 @@ The project demonstrates the use of React and Redux to create a book library app
 
 - [NPM](https://www.npmjs.com/)
 
-
 ## Live Demo
 
 [React-calculator)
