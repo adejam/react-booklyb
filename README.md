@@ -30,7 +30,7 @@ The project demonstrates the use of React and Redux to create a book library app
 
 ## Live Demo
 
-[React-calculator)
+[React-booklyb](https://booklyb.netlify.app/)
 
 ### Development (Running locally)
 
