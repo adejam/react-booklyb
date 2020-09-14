@@ -1,9 +1,9 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+import { useSelector } from 'react-redux';
 import Book from './Book';
 
-const BooksList = ({ books }) => {
+const BooksList = () => {
+  const books = useSelector(state => state.bookReducer.books);
   const bookList = books.length ? (
     <table className="table tableStriped">
       <thead>
@@ -27,14 +27,4 @@ const BooksList = ({ books }) => {
   return <div>{bookList}</div>;
 };
 
-BooksList.propTypes = {
-  books: PropTypes.arrayOf(PropTypes.object),
-};
-
-BooksList.defaultProps = {
-  books: [],
-};
-const mapStateToProps = state => ({
-  books: state.bookReducer.books,
-});
-export default connect(mapStateToProps)(BooksList);
+export default BooksList;
