@@ -13,7 +13,11 @@ const Book = ({ book }) => {
 };
 
 Book.propTypes = {
-  book: PropTypes.object,
+  book: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    category: PropTypes.string,
+  }),
   id: PropTypes.number,
   title: PropTypes.string,
   category: PropTypes.string,

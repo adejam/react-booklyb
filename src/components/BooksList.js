@@ -5,28 +5,30 @@ import Book from './Book';
 
 const BooksList = ({ books }) => {
   const bookList = books.length ? (
-    books.map(book => <Book key={book.id} book={book} />)
+    <table className="table tableStriped">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        {books.map(book => (
+          <Book key={book.id} book={book} />
+        ))}
+      </tbody>
+    </table>
   ) : (
-    <tr>no</tr>
-  );
-  return (
     <div>
-      <table className="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Title</th>
-            <th scope="col">Category</th>
-          </tr>
-        </thead>
-        <tbody>{bookList}</tbody>
-      </table>
+      <p>You have no books at the moment</p>
     </div>
   );
+  return <div>{bookList}</div>;
 };
 
 BooksList.propTypes = {
-  books: PropTypes.array,
+  books: PropTypes.arrayOf(PropTypes.object),
 };
 
 BooksList.defaultProps = {
