@@ -6,6 +6,18 @@ const initialState = {
   ],
 };
 
-const bookReducer = (state = initialState) => state;
+const bookReducer = (state = initialState, action) => {
+  const { type, id } = action;
+  switch (type) {
+    case 'REMOVE_BOOK':
+      return {
+        ...state,
+        books: state.books.filter(book => book.id !== id),
+      };
+    case 'CREATE_BOOK':
+    default:
+      return state;
+  }
+};
 
 export default bookReducer;
