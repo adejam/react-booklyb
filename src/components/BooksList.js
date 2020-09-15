@@ -20,7 +20,7 @@ const BooksList = () => {
       </tbody>
     </table>
   ) : (
-    <div>
+    <div className="ta_center m_10">
       <p>You have no books at the moment</p>
     </div>
   );

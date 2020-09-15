@@ -26,16 +26,29 @@ a:hover {
   text-decoration: none;
 }
 
-button, input, optgroup, select, textarea {
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit;
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
-input:focus, select:focus, .btn:focus {
-    border-color: #00ffff;
-  }
+input:focus,
+select:focus,
+.btn:focus {
+  border-color: #00ffff;
+}
 
-  .btn:hover {
-    opacity: 0.9;
-  }
-  
+.btn:hover {
+  opacity: 0.9;
+}
+
+.ta_center{
+  text-align: center;
+}
+
+.m_10{
+  margin: 10px;
+}
