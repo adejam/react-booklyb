@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import Book from '../containers/Book';
 
 const BooksList = () => {
-  const books = useSelector(state => state.bookReducer.books);
+  const books = useSelector(state => state.books);
   const bookList = books.length ? (
     <table className="table tableStriped">
       <thead>
