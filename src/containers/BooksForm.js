@@ -1,10 +1,21 @@
 import React, { useState } from 'react';
+import { connect, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+import actions from '../actions/index';
+import dynamicId from '../functions/dynamicId';
 
-const BooksForm = () => {
-  const [formValues, setFormValues] = useState({ title: '', category: '' });
+const BooksForm = ({ createBook }) => {
+  const books = useSelector(state => state.bookReducer.books);
+  const [formValues, setValues] = useState({ id: null, title: '', category: '' });
   const handleSubmit = e => {
     e.preventDefault();
-    setFormValues({ ...formValues, title: '', category: '' });
+    createBook(formValues);
+    setValues({
+      ...formValues,
+      id: null,
+      title: '',
+      category: '',
+    });
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -15,7 +26,8 @@ const BooksForm = () => {
           id="title"
           placeholder="Title"
           value={formValues.title}
-          onChange={e => setFormValues({ ...formValues, title: e.target.value })}
+          onChange={e => setValues({ ...formValues, id: dynamicId(books), title: e.target.value })}
+          required
         />
       </div>
       <div className="formGroup">
@@ -23,7 +35,8 @@ const BooksForm = () => {
           className="formControl"
           id="category"
           value={formValues.category}
-          onChange={e => setFormValues({ ...formValues, category: e.target.value })}
+          onChange={e => setValues({ ...formValues, category: e.target.value })}
+          required
         >
           <option value="">Choose Category</option>
           <option value="Action">Action</option>
@@ -44,4 +57,15 @@ const BooksForm = () => {
   );
 };
 
-export default BooksForm;
+const mapDispatchToProps = dispatch => ({
+  createBook: formValues => dispatch(actions.createBookAction(formValues)),
+});
+
+BooksForm.propTypes = {
+  createBook: PropTypes.func.isRequired,
+};
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(BooksForm);
