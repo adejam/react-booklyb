@@ -15,7 +15,7 @@ const Book = ({ book, removeBook }) => {
       <td>{category}</td>
       <td>
         <button type="button" className="btn btnPrimary" onClick={() => handleClick()}>
-          Delete
+          Remove Book
         </button>
       </td>
     </tr>
