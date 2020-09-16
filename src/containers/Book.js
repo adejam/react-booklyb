@@ -24,11 +24,11 @@ const Book = ({ book, removeBook }) => {
 
 Book.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.number,
+    id: PropTypes.string,
     title: PropTypes.string,
     category: PropTypes.string,
   }),
-  id: PropTypes.number,
+  id: PropTypes.string,
   title: PropTypes.string,
   category: PropTypes.string,
   removeBook: PropTypes.func.isRequired,
@@ -36,7 +36,7 @@ Book.propTypes = {
 
 Book.defaultProps = {
   book: {},
-  id: null,
+  id: '',
   title: '',
   category: '',
 };
