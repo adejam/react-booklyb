@@ -13,6 +13,7 @@ const initialState = {
     { id: uuidv4(), title: 'Peter Pan', category: 'novel' },
     { id: uuidv4(), title: 'Superman', category: 'Sci-fi' },
   ],
+  filter: 'all',
 };
 
 const store = createStore(rootReducer, initialState);
