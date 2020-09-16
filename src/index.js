@@ -3,14 +3,15 @@ import ReactDOM from 'react-dom';
 import './css/index.css';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 import App from './components/App';
 import rootReducer from './reducers/index';
 
 const initialState = {
   books: [
-    { id: Math.random(), title: 'Oliver Twist', category: 'Fiction' },
-    { id: Math.random(), title: 'Peter Pan', category: 'novel' },
-    { id: Math.random(), title: 'Superman', category: 'Sci-fi' },
+    { id: uuidv4(), title: 'Oliver Twist', category: 'Fiction' },
+    { id: uuidv4(), title: 'Peter Pan', category: 'novel' },
+    { id: uuidv4(), title: 'Superman', category: 'Sci-fi' },
   ],
 };
 

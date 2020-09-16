@@ -5,11 +5,11 @@ import { v4 as uuidv4 } from 'uuid';
 import actions from '../actions/index';
 
 const BooksForm = ({ createBook }) => {
-  const [formValues, setValues] = useState({ id: null, title: '', category: '' });
+  const [formValues, setFormValues] = useState({ id: null, title: '', category: '' });
   const handleSubmit = e => {
     e.preventDefault();
     createBook(formValues);
-    setValues({
+    setFormValues({
       ...formValues,
       id: null,
       title: '',
@@ -25,7 +25,7 @@ const BooksForm = ({ createBook }) => {
           id="title"
           placeholder="Title"
           value={formValues.title}
-          onChange={e => setValues({ ...formValues, id: uuidv4(), title: e.target.value })}
+          onChange={e => setFormValues({ ...formValues, id: uuidv4(), title: e.target.value })}
           required
         />
       </div>
@@ -34,7 +34,7 @@ const BooksForm = ({ createBook }) => {
           className="formControl"
           id="category"
           value={formValues.category}
-          onChange={e => setValues({ ...formValues, category: e.target.value })}
+          onChange={e => setFormValues({ ...formValues, category: e.target.value })}
           required
         >
           <option value="">Choose Category</option>
