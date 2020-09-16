@@ -5,7 +5,11 @@ import { v4 as uuidv4 } from 'uuid';
 import actions from '../actions/index';
 
 const BooksForm = ({ createBook }) => {
+<<<<<<< HEAD
   const [formValues, setFormValues] = useState({ id: null, title: '', category: '' });
+=======
+  const [formValues, setValues] = useState({ id: null, title: '', category: '' });
+>>>>>>> f7c9154... feat: Add uuid package to generate dynamic id
   const handleSubmit = e => {
     e.preventDefault();
     createBook(formValues);
@@ -25,7 +29,11 @@ const BooksForm = ({ createBook }) => {
           id="title"
           placeholder="Title"
           value={formValues.title}
+<<<<<<< HEAD
           onChange={e => setFormValues({ ...formValues, id: uuidv4(), title: e.target.value })}
+=======
+          onChange={e => setValues({ ...formValues, id: uuidv4(), title: e.target.value })}
+>>>>>>> f7c9154... feat: Add uuid package to generate dynamic id
           required
         />
       </div>
