@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
-import { connect, useSelector } from 'react-redux';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import actions from '../actions/index';
-import dynamicId from '../functions/dynamicId';
 
 const BooksForm = ({ createBook }) => {
-  const books = useSelector(state => state.bookReducer.books);
   const [formValues, setValues] = useState({ id: null, title: '', category: '' });
   const handleSubmit = e => {
     e.preventDefault();
@@ -26,7 +25,7 @@ const BooksForm = ({ createBook }) => {
           id="title"
           placeholder="Title"
           value={formValues.title}
-          onChange={e => setValues({ ...formValues, id: dynamicId(books), title: e.target.value })}
+          onChange={e => setValues({ ...formValues, id: uuidv4(), title: e.target.value })}
           required
         />
       </div>
