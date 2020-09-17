@@ -9,13 +9,12 @@ import rootReducer from './reducers/index';
 
 const initialState = {
   books: [
-    { id: uuidv4(), title: 'Oliver Twist', category: 'Fiction' },
-    { id: uuidv4(), title: 'Peter Pan', category: 'novel' },
-    { id: uuidv4(), title: 'Superman', category: 'Sci-fi' },
+    { id: uuidv4(), title: 'Oliver Twist', category: 'History' },
+    { id: uuidv4(), title: 'Peter Pan', category: 'Kids' },
+    { id: uuidv4(), title: 'Superman', category: 'Action' },
   ],
-  filter: 'all',
+  filter: 'All',
 };
-
 const store = createStore(rootReducer, initialState);
 ReactDOM.render(
   <React.StrictMode>
