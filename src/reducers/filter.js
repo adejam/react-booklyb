@@ -1,8 +1,8 @@
-const filterReducer = (state = 'all', action) => {
+const filterReducer = (state = 'All', action) => {
   const { type, payload } = action;
   switch (type) {
     case 'CHANGE_FILTER':
-      return state.filter(book => book.id !== payload);
+      return payload;
     default:
       return state;
   }

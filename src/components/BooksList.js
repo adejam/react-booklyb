@@ -1,10 +1,28 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { connect, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+import actions from '../actions/index';
 import Book from '../containers/Book';
+import CategoryFilter from '../containers/CategoryFilter';
 
-const BooksList = () => {
+const BooksList = ({ changeFilter }) => {
   const books = useSelector(state => state.books);
-  const bookList = books.length ? (
+  const filterState = useSelector(state => state.filter);
+  const handleFilterChange = e => {
+    changeFilter(e.target.value);
+  };
+
+  const filteredBooks = () => {
+    let newBooks;
+    if (filterState === 'All') {
+      newBooks = books;
+    } else {
+      newBooks = books.filter(book => book.category === filterState);
+    }
+    return newBooks;
+  };
+  const booksToDisplay = filteredBooks();
+  const bookList = booksToDisplay.length ? (
     <table className="table tableStriped">
       <thead>
         <tr>
@@ -14,7 +32,7 @@ const BooksList = () => {
         </tr>
       </thead>
       <tbody>
-        {books.map(book => (
+        {booksToDisplay.map(book => (
           <Book key={book.id} book={book} />
         ))}
       </tbody>
@@ -24,7 +42,23 @@ const BooksList = () => {
       <p>You have no books at the moment</p>
     </div>
   );
-  return <div>{bookList}</div>;
+  return (
+    <div>
+      <div>{bookList}</div>
+      <CategoryFilter filterHandler={handleFilterChange} />
+    </div>
+  );
 };
 
-export default BooksList;
+const mapDispatchToProps = dispatch => ({
+  changeFilter: category => dispatch(actions.changeFilterAction(category)),
+});
+
+BooksList.propTypes = {
+  changeFilter: PropTypes.func.isRequired,
+};
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(BooksList);
