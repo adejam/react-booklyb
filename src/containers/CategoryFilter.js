@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const CategoryFilter = ({ filterHandler }) => (
-  <div>
-    <div className="formGroup">
+  <div className="mb_10 p_10 filterDiv">
+    <div>
       <select className="formControl" onChange={filterHandler} required>
-        <option value="All">Filter All</option>
+        <option value="All">All</option>
         <option value="Action">Action</option>
         <option value="Biography">Biography</option>
         <option value="History">History</option>

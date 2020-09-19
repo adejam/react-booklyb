@@ -43,10 +43,10 @@ const BooksList = ({ changeFilter }) => {
     </div>
   );
   return (
-    <div>
-      <div>{bookList}</div>
+    <main>
       <CategoryFilter filterHandler={handleFilterChange} />
-    </div>
+      {bookList}
+    </main>
   );
 };
 
