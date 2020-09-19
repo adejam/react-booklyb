@@ -7,10 +7,10 @@ const Navbar = () => (
         Book Store
       </a>
       <nav>
-        <a href="#home" className="navItem">
+        <a href="#home" className="navItem tt_u">
           Books
         </a>
-        <a href="#news" className="navItem">
+        <a href="#news" className="navItem tt_u">
           Category
         </a>
       </nav>

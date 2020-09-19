@@ -9,16 +9,10 @@
 
 .navbar,
 .section,
-.filterDiv,
-.form {
+.filterDiv {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 1rem;
-}
-
-.navbar,
-.section,
-.filterDiv {
   padding: 0.5rem 1rem;
 }
 
@@ -157,4 +151,9 @@
 
 .percentRate {
   font-size: 32px;
+}
+
+.addBookHeader {
+  color: #495059;
+  margin: 15px 0;
 }

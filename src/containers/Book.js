@@ -14,18 +14,18 @@ const Book = ({ book, removeBook }) => {
       <div className="name">
         <div>
           <p>{category}</p>
-          <h4>{title}</h4>
+          <h3>{title}</h3>
           <a href="#author" className="azure mb_10 d_ib">
             Author
           </a>
           <nav>
-            <a href="#comments" className="azure pr_10">
+            <a href="#comments" className="azure pr_10 br_block">
               Comments
             </a>
-            <a href="#remove" className="azure pr_10" onClick={() => handleClick()}>
+            <a href="#remove" className="azure pr_10 ml_10 br_block" onClick={() => handleClick()}>
               Remove
             </a>
-            <a href="#edit" className="azure pr_10">
+            <a href="#edit" className="azure pr_10 ml_10">
               Edit
             </a>
           </nav>
