@@ -18,7 +18,7 @@ const BooksForm = ({ createBook }) => {
   };
   return (
     <section className="section ">
-      <h2 className="addBookHeader bt_block pt_10">Add Book</h2>
+      <h2 className="addBookHeader bt_block pt_10">Add New Book</h2>
       <form onSubmit={handleSubmit} className="form">
         <div className="formGroup titleInputDiv mb_10">
           <input
