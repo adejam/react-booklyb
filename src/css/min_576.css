@@ -1,0 +1,16 @@
+.form {
+  display: flex;
+}
+
+.name {
+  flex: 1 1 300px;
+}
+
+.percentUpdate {
+  flex: 1 1 360px;
+}
+
+.categorySelectDiv,
+.titleInputDiv {
+  padding-right: 10px;
+}

@@ -23,20 +23,12 @@ const BooksList = ({ changeFilter }) => {
   };
   const booksToDisplay = filteredBooks();
   const bookList = booksToDisplay.length ? (
-    <table className="table tableStriped">
-      <thead>
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Title</th>
-          <th scope="col">Category</th>
-        </tr>
-      </thead>
-      <tbody>
-        {booksToDisplay.map(book => (
-          <Book key={book.id} book={book} />
-        ))}
-      </tbody>
-    </table>
+    <section className="d_flex d_c section">
+      <h2 className="d_none">Books Lists</h2>
+      {booksToDisplay.map(book => (
+        <Book key={book.id} book={book} />
+      ))}
+    </section>
   ) : (
     <div className="ta_center m_10">
       <p>You have no books at the moment</p>

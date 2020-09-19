@@ -1,10 +1,74 @@
 .navbar,
-.filterDiv {
+.filterDiv,
+.bookArticle,
+.percentUpdate,
+.percentDiv,
+.percent {
+  display: flex;
+}
+
+.navbar,
+.section,
+.filterDiv,
+.form {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 1rem;
+}
+
+.navbar,
+.section,
+.filterDiv {
   padding: 0.5rem 1rem;
-  display: flex;
+}
+
+.formControl {
+  display: block;
+  font-size: 1rem;
+  color: #495057;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+}
+
+.formControl,
+.btn {
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.btnPrimary {
+  color: #fff;
+  background-color: #0290ff;
+  border-color: #007bff;
+}
+
+.btn {
+  display: inline-block;
+  font-weight: 300;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: 0.8rem;
+}
+
+.input:active {
+  border-color: #008000;
+}
+
+.titleInputDiv {
+  flex: 2 1 auto;
+}
+
+.percent,
+.categorySelectDiv,
+.submitSelectDiv {
+  flex: 1 1 auto;
 }
 
 .navbar {
@@ -42,20 +106,55 @@
   opacity: 0.7;
 }
 
+.list_group_item {
+  margin-bottom: 10px;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.list_group_item_action {
+  width: 100%;
+  color: #495057;
+  text-align: inherit;
+}
+
+.list_group_item:hover {
+  border: 1px solid #0290ff;
+}
+
+.list_group_item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.bookArticle {
+  flex-flow: row wrap;
+}
+
 .filterDiv {
   justify-content: flex-end;
 }
 
-.formControl {
-  display: block;
-  padding: 0.375rem 0.75rem;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #495057;
-  background-color: #fff;
-  background-image: none;
-  background-clip: padding-box;
-  border-bottom: 1px solid #ced4da;
-  border-radius: 0.25rem;
-  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+.name,
+.percentUpdate {
+  flex: 1 1 320px;
+}
+
+.percentDiv,
+.updateDiv,
+.percent {
+  align-items: center;
+}
+
+.percentDiv {
+  flex: 1 1 185px;
+}
+
+.updateDiv {
+  flex: 1 1 175px;
+}
+
+.percentRate {
+  font-size: 32px;
 }

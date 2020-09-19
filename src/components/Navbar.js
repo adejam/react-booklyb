@@ -16,7 +16,7 @@ const Navbar = () => (
       </nav>
       <nav className="mlAuto">
         <a href="/avatar" className="avatar  navItem">
-          <img src="" width="15" height="15" alt="A" />
+          <img src="#" width="15" height="15" alt="A" />
         </a>
       </nav>
     </nav>

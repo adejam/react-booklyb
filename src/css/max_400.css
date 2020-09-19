@@ -1,0 +1,8 @@
+.percentImg,
+.percentRate {
+  width: 45px;
+}
+
+.percent {
+  border-right: none;
+}
