@@ -15,7 +15,7 @@ const Navbar = ({ changeFilter }) => {
           Book Store
         </a>
         <nav>
-          <a href="#home" className="navItem tt_u">
+          <a href="#home" className="navItem books tt_u">
             Books
           </a>
           <CategoryFilter filterHandler={handleFilterChange} />
