@@ -9,7 +9,8 @@
 
 .navbar,
 .section,
-.filterDiv {
+.filterDiv,
+.emptyStoreDiv {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto 1rem;
@@ -76,7 +77,7 @@
   display: inline-block;
   padding: 0.3125rem 0;
   margin-right: 1rem;
-  font-size: 1.25rem;
+  font-size: 1.2em;
   line-height: inherit;
 }
 
@@ -96,7 +97,7 @@
   border: 1px solid rgba(0, 0, 0, 0.125);
 }
 
-.navbar a:hover {
+.navbar .navItem:hover {
   opacity: 0.7;
 }
 
@@ -156,4 +157,9 @@
 .addBookHeader {
   color: #495059;
   margin: 15px 0;
+}
+
+.emptyStore {
+  width: 300px;
+  height: 300px;
 }

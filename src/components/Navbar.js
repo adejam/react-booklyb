@@ -1,26 +1,44 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import actions from '../actions/index';
+import CategoryFilter from './CategoryFilter';
 
-const Navbar = () => (
-  <header className="bgWhite">
-    <nav className="navbar" id="myTopnav">
-      <a className="navbarBrand azure" href="/">
-        Book Store
-      </a>
-      <nav>
-        <a href="#home" className="navItem tt_u">
-          Books
+const Navbar = ({ changeFilter }) => {
+  const handleFilterChange = e => {
+    changeFilter(e.target.value);
+  };
+  return (
+    <header className="bgWhite">
+      <nav className="navbar" id="myTopnav">
+        <a className="navbarBrand azure" href="/">
+          Book Store
         </a>
-        <a href="#news" className="navItem tt_u">
-          Category
-        </a>
+        <nav>
+          <a href="#home" className="navItem tt_u">
+            Books
+          </a>
+          <CategoryFilter filterHandler={handleFilterChange} />
+        </nav>
+        <nav className="mlAuto">
+          <a href="/avatar" className="avatar  navItem">
+            <img src="#" width="15" height="15" alt="A" />
+          </a>
+        </nav>
       </nav>
-      <nav className="mlAuto">
-        <a href="/avatar" className="avatar  navItem">
-          <img src="#" width="15" height="15" alt="A" />
-        </a>
-      </nav>
-    </nav>
-  </header>
-);
+    </header>
+  );
+};
 
-export default Navbar;
+Navbar.propTypes = {
+  changeFilter: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = dispatch => ({
+  changeFilter: category => dispatch(actions.changeFilterAction(category)),
+});
+
+export default connect(
+  null,
+  mapDispatchToProps,
+)(Navbar);

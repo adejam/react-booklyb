@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
 import actions from '../actions/index';
+import Options from '../components/Options';
 
 const BooksForm = ({ createBook }) => {
   const [formValues, setFormValues] = useState({ id: null, title: '', category: '' });
@@ -16,6 +17,7 @@ const BooksForm = ({ createBook }) => {
       category: '',
     });
   };
+  const options = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-fi'];
   return (
     <section className="section ">
       <h2 className="addBookHeader bt_block pt_10">Add New Book</h2>
@@ -40,13 +42,9 @@ const BooksForm = ({ createBook }) => {
             required
           >
             <option value="">Category</option>
-            <option value="Action">Action</option>
-            <option value="Biography">Biography</option>
-            <option value="History">History</option>
-            <option value="Horror">Horror</option>
-            <option value="Kids">Kids</option>
-            <option value="Learning">Learning</option>
-            <option value="Sci-Fi">Sci-Fi</option>
+            {options.map(option => (
+              <Options key={option} category={option} />
+            ))}
           </select>
         </div>
         <div className="formGroup submitSelectDiv mb_10">

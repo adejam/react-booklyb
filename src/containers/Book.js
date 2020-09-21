@@ -12,7 +12,7 @@ const Book = ({ book, removeBook }) => {
   return (
     <article className="list_group_item list_group_item_action bookArticle">
       <div className="name">
-        <div>
+        <div className="nameDiv">
           <p>{category}</p>
           <h3>{title}</h3>
           <a href="#author" className="azure mb_10 d_ib">
