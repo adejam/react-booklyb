@@ -4,9 +4,8 @@ import Book from './Book';
 
 const BooksList = () => {
   const books = useSelector(state => state.books);
-  const filterState = useSelector(state => state.filter);
-  const booksToDisplay =
-    filterState === 'All' ? books : books.filter(book => book.category === filterState);
+  const filter = useSelector(state => state.filter);
+  const booksToDisplay = filter === 'All' ? books : books.filter(book => book.category === filter);
   const bookList = booksToDisplay.length ? (
     <section className="d_flex d_c section">
       <h2 className="d_none">Books Lists</h2>
