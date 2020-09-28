@@ -21,8 +21,8 @@ const Navbar = ({ changeFilter }) => {
           <CategoryFilter filterHandler={handleFilterChange} />
         </nav>
         <nav className="mlAuto">
-          <a href="/avatar" className="avatar  navItem">
-            <img src="#" width="15" height="15" alt="A" />
+          <a href="#avatar" className="avatar navItem">
+            A
           </a>
         </nav>
       </nav>

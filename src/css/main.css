@@ -90,11 +90,22 @@
   padding: 10px;
   text-decoration: none;
   font-size: 0.8rem;
+  border: none;
 }
 
 .avatar {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.125);
+  width: 15px;
+  height: 15px;
+  background-color: #0290ff;
+}
+
+.navItemSelect:hover {
+  border: 0.5px solid rgba(0, 0, 0, 0.125);
+  appearance: menulist;
+  cursor: pointer;
+  padding: 8px;
 }
 
 .navbar .navItem:hover {
