@@ -6,6 +6,12 @@
 
 The project demonstrates the use of React and Redux to create a book library app.
 
+## Features
+
+- Add Book feature
+- Delete Book feature
+- Book filter by category.
+
 ## Technology Used
 
 - HTML
@@ -21,6 +27,13 @@ The project demonstrates the use of React and Redux to create a book library app
 - [Redux](https://redux.js.org/)
 
 - Javascript
+
+  - Arrow function.
+  - Destructuring assignment.
+  - Object literal
+  - Template literal
+  - `.filter()` method
+  - Ternary Operator.
 
 - [Webpack](https://webpack.js.org/)
 
