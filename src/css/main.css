@@ -96,9 +96,13 @@
 .avatar {
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.125);
-  width: 15px;
-  height: 15px;
+  width: 32px;
+  height: 32px;
   background-color: #0290ff;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  padding: 0;
 }
 
 .navItemSelect:hover {
