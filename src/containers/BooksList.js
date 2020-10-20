@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import Book from './Book';
+import BooksForm from './BooksForm';
 
 const BooksList = () => {
   const books = useSelector(state => state.books);
@@ -24,7 +25,12 @@ const BooksList = () => {
       <p>Book Store Empty</p>
     </div>
   );
-  return <main>{bookList}</main>;
+  return (
+    <main>
+      {bookList}
+      <BooksForm />
+    </main>
+  );
 };
 
 export default BooksList;

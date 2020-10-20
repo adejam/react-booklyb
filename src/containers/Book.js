@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import actions from '../actions/index';
 import percent from '../images/percent.png';
@@ -15,19 +16,20 @@ const Book = ({ book, removeBook }) => {
         <div className="nameDiv">
           <p>{category}</p>
           <h3>{title}</h3>
-          <a href="#author" className="azure mb_10 d_ib">
+          <p className=" mb_10 mt_10">
+            <b>BY:</b>
             Author
-          </a>
+          </p>
           <nav>
-            <a href="#comments" className="azure pr_10 br_block">
-              Comments
-            </a>
+            <NavLink to={`/edit-book-comment/${id}`} className="azure pr_10 br_block">
+              Comment
+            </NavLink>
             <a href="#remove" className="azure pr_10 ml_10 br_block" onClick={() => handleClick()}>
               Remove
             </a>
-            <a href="#edit" className="azure pr_10 ml_10">
+            <NavLink to={`/edit-book/${id}`} className="azure pr_10 ml_10">
               Edit
-            </a>
+            </NavLink>
           </nav>
         </div>
       </div>
@@ -46,9 +48,9 @@ const Book = ({ book, removeBook }) => {
         <div className="updateDiv p_10">
           <h5>Current Chapter</h5>
           <p className="mb_10">Chapter 17:A lesson learned</p>
-          <button type="button" className="btn btnPrimary">
+          <NavLink to={`/edit-book-progress/${id}`} className="btn btnPrimary">
             Update Progress
-          </button>
+          </NavLink>
         </div>
       </div>
     </article>

@@ -82,6 +82,10 @@ select:focus,
   margin-bottom: 10px;
 }
 
+.mt_10 {
+  margin-top: 10px;
+}
+
 .ml_10 {
   margin-left: 10px;
 }
@@ -116,4 +120,12 @@ select:focus,
 
 .appearance_none {
   appearance: none;
+}
+
+.js_c {
+  justify-content: center;
+}
+
+.fd_col{
+  flex-direction: column;
 }

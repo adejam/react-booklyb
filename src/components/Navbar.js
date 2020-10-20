@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link, NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import actions from '../actions/index';
 import CategoryFilter from './CategoryFilter';
@@ -11,19 +12,31 @@ const Navbar = ({ changeFilter }) => {
   return (
     <header className="bgWhite">
       <nav className="navbar" id="myTopnav">
-        <a className="navbarBrand azure" href="/">
+        <Link className="navbarBrand azure" to="/">
           Book Store
-        </a>
+        </Link>
         <nav>
-          <a href="#home" className="navItem books tt_u">
+          <NavLink to="/books" className="navItem books tt_u">
             Books
-          </a>
+          </NavLink>
           <CategoryFilter filterHandler={handleFilterChange} />
         </nav>
-        <nav className="mlAuto">
-          <a href="#avatar" className="avatar navItem">
-            A
-          </a>
+        <nav className="mlAuto profileLinks">
+          <li>
+            <NavLink to="/profile" className="avatar navItem">
+              A
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/sign-up" className="navItem">
+              Sign Up
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/login" className="navItem">
+              Log In
+            </NavLink>
+          </li>
         </nav>
       </nav>
     </header>

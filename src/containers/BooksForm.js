@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
 import actions from '../actions/index';
 import Options from '../components/Options';
 
@@ -9,6 +10,7 @@ const BooksForm = ({ createBook }) => {
   const [formValues, setFormValues] = useState({ id: null, title: '', category: '' });
   const handleSubmit = e => {
     e.preventDefault();
+    axios.defaults.withCredentials = true;
     createBook(formValues);
     setFormValues({
       ...formValues,
@@ -27,6 +29,7 @@ const BooksForm = ({ createBook }) => {
             type="text"
             className="formControl w_full"
             id="title"
+            name="bookTitle"
             placeholder="Book Title"
             value={formValues.title}
             onChange={e => setFormValues({ ...formValues, id: uuidv4(), title: e.target.value })}
@@ -37,6 +40,7 @@ const BooksForm = ({ createBook }) => {
           <select
             className="formControl w_full"
             id="category"
+            name="bookCategory"
             value={formValues.category}
             onChange={e => setFormValues({ ...formValues, category: e.target.value })}
             required

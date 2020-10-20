@@ -40,6 +40,19 @@
   border-color: #007bff;
 }
 
+.smallForm {
+  max-width: 400px;
+}
+
+.mediumForm {
+  max-width: 700px;
+}
+
+.smallForm,
+.mediumForm {
+  margin: 0 auto;
+}
+
 .btn {
   display: inline-block;
   font-weight: 300;
@@ -81,7 +94,8 @@
   line-height: inherit;
 }
 
-.azure {
+.azure,
+.active {
   color: #0290ff;
 }
 
@@ -103,6 +117,11 @@
   color: #fff;
   display: block;
   padding: 0;
+}
+
+.profileLinks {
+  display: flex;
+  align-items: center;
 }
 
 .navItemSelect:hover {
