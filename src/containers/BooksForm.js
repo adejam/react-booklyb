@@ -2,21 +2,19 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import axios from 'axios';
 import actions from '../actions/index';
 import Options from '../components/Options';
 
 const BooksForm = ({ createBook }) => {
-  const [formValues, setFormValues] = useState({ id: null, title: '', category: '' });
+  const [values, setValues] = useState({ bookId: null, bookTitle: '', bookCategory: '' });
   const handleSubmit = e => {
     e.preventDefault();
-    axios.defaults.withCredentials = true;
-    createBook(formValues);
-    setFormValues({
-      ...formValues,
-      id: null,
-      title: '',
-      category: '',
+    createBook(values);
+    setValues({
+      ...values,
+      bookId: null,
+      bookTitle: '',
+      bookCategory: '',
     });
   };
   const options = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-fi'];
@@ -31,8 +29,8 @@ const BooksForm = ({ createBook }) => {
             id="title"
             name="bookTitle"
             placeholder="Book Title"
-            value={formValues.title}
-            onChange={e => setFormValues({ ...formValues, id: uuidv4(), title: e.target.value })}
+            value={values.title}
+            onChange={e => setValues({ ...values, bookId: uuidv4(), bookTitle: e.target.value })}
             required
           />
         </div>
@@ -41,8 +39,8 @@ const BooksForm = ({ createBook }) => {
             className="formControl w_full"
             id="category"
             name="bookCategory"
-            value={formValues.category}
-            onChange={e => setFormValues({ ...formValues, category: e.target.value })}
+            value={values.category}
+            onChange={e => setValues({ ...values, category: e.target.value })}
             required
           >
             <option value="">Category</option>

@@ -6,28 +6,28 @@ import actions from '../actions/index';
 import percent from '../images/percent.png';
 
 const Book = ({ book, removeBook }) => {
-  const { id, title, category } = book;
+  const { bookId, bookTitle, bookCategory } = book;
   const handleClick = () => {
-    removeBook(id);
+    removeBook(bookId);
   };
   return (
     <article className="list_group_item list_group_item_action bookArticle">
       <div className="name">
         <div className="nameDiv">
-          <p>{category}</p>
-          <h3>{title}</h3>
+          <p>{bookCategory}</p>
+          <h3>{bookTitle}</h3>
           <p className=" mb_10 mt_10">
             <b>BY:</b>
             Author
           </p>
           <nav>
-            <NavLink to={`/edit-book-comment/${id}`} className="azure pr_10 br_block">
+            <NavLink to={`/edit-book-comment/${bookId}`} className="azure pr_10 br_block">
               Comment
             </NavLink>
             <a href="#remove" className="azure pr_10 ml_10 br_block" onClick={() => handleClick()}>
               Remove
             </a>
-            <NavLink to={`/edit-book/${id}`} className="azure pr_10 ml_10">
+            <NavLink to={`/edit-book/${bookId}`} className="azure pr_10 ml_10">
               Edit
             </NavLink>
           </nav>
@@ -48,7 +48,7 @@ const Book = ({ book, removeBook }) => {
         <div className="updateDiv p_10">
           <h5>Current Chapter</h5>
           <p className="mb_10">Chapter 17:A lesson learned</p>
-          <NavLink to={`/edit-book-progress/${id}`} className="btn btnPrimary">
+          <NavLink to={`/edit-book-progress/${bookId}`} className="btn btnPrimary">
             Update Progress
           </NavLink>
         </div>
@@ -59,21 +59,21 @@ const Book = ({ book, removeBook }) => {
 
 Book.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.string,
-    title: PropTypes.string,
-    category: PropTypes.string,
+    bookId: PropTypes.string,
+    bookTitle: PropTypes.string,
+    bookCategory: PropTypes.string,
   }),
-  id: PropTypes.string,
-  title: PropTypes.string,
-  category: PropTypes.string,
+  bookId: PropTypes.string,
+  bookTitle: PropTypes.string,
+  bookCategory: PropTypes.string,
   removeBook: PropTypes.func.isRequired,
 };
 
 Book.defaultProps = {
   book: {},
-  id: '',
-  title: '',
-  category: '',
+  bookId: '',
+  bookTitle: '',
+  bookCategory: '',
 };
 
 const mapDispatchToProps = dispatch => ({

@@ -1,10 +1,19 @@
+import { FETCH_BOOK_FAILURE, FETCH_BOOK_SUCCESS } from '../actionTypes/bookActionTypes';
+
 const bookReducer = (state = {}, action) => {
-  const { type, payload } = action;
-  switch (type) {
-    case 'REMOVE_BOOK':
-      return state.filter(book => book.id !== payload);
-    case 'CREATE_BOOK':
-      return state.concat(action.payload);
+  switch (action.type) {
+    case FETCH_BOOK_SUCCESS:
+      return {
+        ...state,
+        books: action.payload,
+        bookError: '',
+      };
+    case FETCH_BOOK_FAILURE:
+      return {
+        ...state,
+        books: action.payload.books,
+        bookError: action.payload.error,
+      };
     default:
       return state;
   }
