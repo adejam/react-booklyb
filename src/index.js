@@ -9,6 +9,7 @@ import App from './components/App';
 import rootReducer from './reducers/index';
 
 Axios.defaults.baseURL = 'https://peaceful-cove-38084.herokuapp.com/public/api/';
+Axios.defaults.withCredentials = true;
 
 const initialState = {
   books: {
