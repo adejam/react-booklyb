@@ -48,9 +48,8 @@ const EditBook = ({
           currentChapterRead: book.currentChapterRead,
         });
       })
-      .catch(error => {
-        const errorMsg = error.message;
-        alertFunction(errorMsg, 'alert_danger');
+      .catch(() => {
+        alertFunction('Error in connection', 'alert_danger');
       });
   }, []);
   if (!username || username === 'invalid') {

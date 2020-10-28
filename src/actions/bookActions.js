@@ -97,9 +97,8 @@ export const deleteBook = id => dispatch => {
           alertFunction(book.error, 'alert_danger');
         }
       })
-      .catch(error => {
-        const errorMsg = error.message;
-        alertFunction(errorMsg, 'alert_danger');
+      .catch(() => {
+        alertFunction('Error in Connection', 'alert_danger');
       });
   } else {
     dispatch(deleteBookSuccess(id));
