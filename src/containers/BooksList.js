@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { connect, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import fetchBook from '../actions/bookActions';
+import { fetchBook } from '../actions/bookActions';
 import Alert from '../components/Alert';
 import Book from './Book';
 import BooksForm from './BooksForm';

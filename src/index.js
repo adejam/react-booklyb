@@ -7,7 +7,6 @@ import Axios from 'axios';
 import thunk from 'redux-thunk';
 import App from './components/App';
 import rootReducer from './reducers/index';
-// import token from './functions/token';
 
 Axios.defaults.baseURL = 'http://localhost/booklyb-API/public/api/';
 
@@ -19,7 +18,6 @@ const initialState = {
   filter: 'All',
   userState: '',
   auth: {
-    // config: { headers: { Authorization: `Bearer ${token.getToken()}` } },
     user: [],
     error: '',
   },

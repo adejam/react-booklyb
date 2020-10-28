@@ -54,15 +54,15 @@
 }
 
 .btn {
-  display: inline-block;
+  display: block;
   font-weight: 300;
   text-align: center;
   white-space: nowrap;
   text-transform: uppercase;
-  vertical-align: middle;
   user-select: none;
   border: 1px solid transparent;
   font-size: 0.8rem;
+  margin: 0 auto;
 }
 
 .input:active {
@@ -205,6 +205,10 @@
   border: 1px solid transparent;
   border-radius: 0.25rem;
   width: 95%;
+}
+
+.requiredField {
+  color: #f00;
 }
 
 .alert_danger {

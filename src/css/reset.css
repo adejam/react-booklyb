@@ -102,12 +102,20 @@ select:focus,
   padding-top: 10px;
 }
 
+.mb_50 {
+  margin-bottom: 50px;
+}
+
 .br_block {
   border-right: 1px solid rgba(0, 0, 0, 0.125);;
 }
 
 .bt_block {
   border-top: 1px solid rgba(0, 0, 0, 0.125);;
+}
+
+.bb_block {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);;
 }
 
 .w_full {

@@ -2,17 +2,17 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import actions from '../actions/index';
 import Options from '../components/Options';
+import { addBook } from '../actions/bookActions';
 
 const BooksForm = ({ createBook }) => {
-  const [values, setValues] = useState({ bookId: null, bookTitle: '', bookCategory: '' });
+  const [values, setValues] = useState({ bookId: '', bookTitle: '', bookCategory: '' });
   const handleSubmit = e => {
     e.preventDefault();
     createBook(values);
     setValues({
       ...values,
-      bookId: null,
+      bookId: '',
       bookTitle: '',
       bookCategory: '',
     });
@@ -29,7 +29,7 @@ const BooksForm = ({ createBook }) => {
             id="title"
             name="bookTitle"
             placeholder="Book Title"
-            value={values.title}
+            value={values.bookTitle}
             onChange={e => setValues({ ...values, bookId: uuidv4(), bookTitle: e.target.value })}
             required
           />
@@ -39,8 +39,8 @@ const BooksForm = ({ createBook }) => {
             className="formControl w_full"
             id="category"
             name="bookCategory"
-            value={values.category}
-            onChange={e => setValues({ ...values, category: e.target.value })}
+            value={values.bookCategory}
+            onChange={e => setValues({ ...values, bookCategory: e.target.value })}
             required
           >
             <option value="">Category</option>
@@ -60,7 +60,7 @@ const BooksForm = ({ createBook }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createBook: formValues => dispatch(actions.createBookAction(formValues)),
+  createBook: formValues => dispatch(addBook(formValues)),
 });
 
 BooksForm.propTypes = {
