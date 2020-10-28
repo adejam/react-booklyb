@@ -19,7 +19,7 @@ const BooksList = ({ getBooks, filter, books }) => {
   const bookList = toDisplay.length ? (
     <section className="d_flex d_c section">
       <h2 className="d_none">Books Lists</h2>
-      {books.map(book => (
+      {toDisplay.map(book => (
         <Book key={book.bookId} book={book} />
       ))}
     </section>
