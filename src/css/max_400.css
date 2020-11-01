@@ -1,0 +1,45 @@
+.percentImg,
+.percentRate {
+  width: 45px;
+}
+
+.percent {
+  border-right: none;
+}
+
+.navbarBrand {
+  font-size: 1rem;
+}
+
+.navItem {
+  font-size: 0.6rem;
+}
+
+.avatar img {
+  width: 13px;
+  height: 13px;
+}
+
+.percentUpdate {
+  flex-wrap: wrap;
+}
+
+.nameDiv {
+  text-align: center;
+}
+
+.percentDiv,
+.updateDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.emptyStore {
+  width: 200px;
+  height: 200px;
+}
+
+.books {
+  display: none;
+}

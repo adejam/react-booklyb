@@ -1,7 +1,8 @@
 body {
   font-family: 'Comic sans MS', cursive, sans-serif;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.05);
   overflow-x: hidden;
+  font-size: 14px;
 }
 * {
   margin: 0;
@@ -51,4 +52,68 @@ select:focus,
 
 .m_10{
   margin: 10px;
+}
+
+.p_10 {
+  padding: 10px;
+}
+
+.bgWhite{
+ background-color: #fff;
+}
+
+.mlAuto {
+  margin-left: auto;
+}
+
+.d_none {
+  display: none;
+}
+
+.d_ib{
+  display: inline-block;
+}
+
+.d_flex {
+  display: flex;
+}
+
+.mb_10 {
+  margin-bottom: 10px;
+}
+
+.ml_10 {
+  margin-left: 10px;
+}
+
+.d_c {
+  flex-direction: column;
+}
+
+.pr_10{
+  padding-right: 10px;
+}
+
+.pt_10{
+  padding-top: 10px;
+}
+
+.br_block {
+  border-right: 1px solid rgba(0, 0, 0, 0.125);;
+}
+
+.bt_block {
+  border-top: 1px solid rgba(0, 0, 0, 0.125);;
+}
+
+.w_full {
+  width: 100%;
+}
+
+.tt_u{
+  text-transform: uppercase;
+}
+
+.appearance_none {
+  appearance: none;
 }

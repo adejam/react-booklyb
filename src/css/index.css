@@ -1,2 +1,4 @@
 @import './reset.css';
 @import './main.css';
+@import 'min_576.css' screen and (min-width: 576px);
+@import 'max_400.css' screen and (max-width: 400px);

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import actions from '../actions/index';
+import percent from '../images/percent.png';
 
 const Book = ({ book, removeBook }) => {
   const { id, title, category } = book;
@@ -9,16 +10,48 @@ const Book = ({ book, removeBook }) => {
     removeBook(id);
   };
   return (
-    <tr>
-      <td>{id}</td>
-      <td>{title}</td>
-      <td>{category}</td>
-      <td>
-        <button type="button" className="btn btnPrimary" onClick={() => handleClick()}>
-          Remove Book
-        </button>
-      </td>
-    </tr>
+    <article className="list_group_item list_group_item_action bookArticle">
+      <div className="name">
+        <div className="nameDiv">
+          <p>{category}</p>
+          <h3>{title}</h3>
+          <a href="#author" className="azure mb_10 d_ib">
+            Author
+          </a>
+          <nav>
+            <a href="#comments" className="azure pr_10 br_block">
+              Comments
+            </a>
+            <a href="#remove" className="azure pr_10 ml_10 br_block" onClick={() => handleClick()}>
+              Remove
+            </a>
+            <a href="#edit" className="azure pr_10 ml_10">
+              Edit
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div className="percentUpdate">
+        <div className="percentDiv p_10">
+          <div className="percent br_block">
+            <div>
+              <img src={percent} alt="percent" className="percentImg" />
+            </div>
+            <div className="ml_10">
+              <p className="percentRate">65%</p>
+              <span className="complete">Completed</span>
+            </div>
+          </div>
+        </div>
+        <div className="updateDiv p_10">
+          <h5>Current Chapter</h5>
+          <p className="mb_10">Chapter 17:A lesson learned</p>
+          <button type="button" className="btn btnPrimary">
+            Update Progress
+          </button>
+        </div>
+      </div>
+    </article>
   );
 };
 
