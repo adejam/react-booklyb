@@ -44,7 +44,7 @@ const Navbar = ({ changeFilter, changeState }) => {
         <nav className="mlAuto profileLinks">
           <li>
             <NavLink to="/profile" className="avatar navItem">
-              A
+              {username.toUpperCase().substr(0, 1)}
             </NavLink>
           </li>
           <li>
