@@ -82,6 +82,10 @@ select:focus,
   margin-bottom: 10px;
 }
 
+.mt_10 {
+  margin-top: 10px;
+}
+
 .ml_10 {
   margin-left: 10px;
 }
@@ -98,12 +102,20 @@ select:focus,
   padding-top: 10px;
 }
 
+.mb_50 {
+  margin-bottom: 50px;
+}
+
 .br_block {
   border-right: 1px solid rgba(0, 0, 0, 0.125);;
 }
 
 .bt_block {
   border-top: 1px solid rgba(0, 0, 0, 0.125);;
+}
+
+.bb_block {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);;
 }
 
 .w_full {
@@ -116,4 +128,12 @@ select:focus,
 
 .appearance_none {
   appearance: none;
+}
+
+.js_c {
+  justify-content: center;
+}
+
+.fd_col{
+  flex-direction: column;
 }

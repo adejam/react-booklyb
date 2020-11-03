@@ -1,21 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import { createStore } from 'redux';
+import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import { v4 as uuidv4 } from 'uuid';
+import Axios from 'axios';
+import thunk from 'redux-thunk';
 import App from './components/App';
 import rootReducer from './reducers/index';
 
+Axios.defaults.baseURL = 'https://peaceful-cove-38084.herokuapp.com/api/';
+Axios.defaults.withCredentials = true;
+
 const initialState = {
-  books: [
-    { id: uuidv4(), title: 'Oliver Twist', category: 'History' },
-    { id: uuidv4(), title: 'Peter Pan', category: 'Kids' },
-    { id: uuidv4(), title: 'Superman', category: 'Action' },
-  ],
+  books: {
+    books: [],
+    bookError: '',
+  },
   filter: 'All',
+  userState: '',
+  auth: {
+    user: [],
+    error: '',
+  },
 };
-const store = createStore(rootReducer, initialState);
+const store = createStore(rootReducer, initialState, applyMiddleware(thunk));
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

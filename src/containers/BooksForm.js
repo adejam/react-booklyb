@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { v4 as uuidv4 } from 'uuid';
-import actions from '../actions/index';
 import Options from '../components/Options';
+import { addBook } from '../actions/bookActions';
 
 const BooksForm = ({ createBook }) => {
-  const [formValues, setFormValues] = useState({ id: null, title: '', category: '' });
+  const [values, setValues] = useState({ bookId: '', bookTitle: '', bookCategory: '' });
   const handleSubmit = e => {
     e.preventDefault();
-    createBook(formValues);
-    setFormValues({
-      ...formValues,
-      id: null,
-      title: '',
-      category: '',
+    createBook(values);
+    setValues({
+      ...values,
+      bookId: '',
+      bookTitle: '',
+      bookCategory: '',
     });
   };
   const options = ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-fi'];
@@ -27,9 +27,10 @@ const BooksForm = ({ createBook }) => {
             type="text"
             className="formControl w_full"
             id="title"
+            name="bookTitle"
             placeholder="Book Title"
-            value={formValues.title}
-            onChange={e => setFormValues({ ...formValues, id: uuidv4(), title: e.target.value })}
+            value={values.bookTitle}
+            onChange={e => setValues({ ...values, bookId: uuidv4(), bookTitle: e.target.value })}
             required
           />
         </div>
@@ -37,8 +38,9 @@ const BooksForm = ({ createBook }) => {
           <select
             className="formControl w_full"
             id="category"
-            value={formValues.category}
-            onChange={e => setFormValues({ ...formValues, category: e.target.value })}
+            name="bookCategory"
+            value={values.bookCategory}
+            onChange={e => setValues({ ...values, bookCategory: e.target.value })}
             required
           >
             <option value="">Category</option>
@@ -58,7 +60,7 @@ const BooksForm = ({ createBook }) => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  createBook: formValues => dispatch(actions.createBookAction(formValues)),
+  createBook: formValues => dispatch(addBook(formValues)),
 });
 
 BooksForm.propTypes = {

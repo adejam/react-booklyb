@@ -1,16 +1,26 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
+import React, { useEffect } from 'react';
+import { connect, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import { fetchBook } from '../actions/bookActions';
+import Alert from '../components/Alert';
 import Book from './Book';
+import BooksForm from './BooksForm';
 
-const BooksList = () => {
-  const books = useSelector(state => state.books);
-  const filter = useSelector(state => state.filter);
-  const booksToDisplay = filter === 'All' ? books : books.filter(book => book.category === filter);
-  const bookList = booksToDisplay.length ? (
+const BooksList = ({ getBooks, filter, books }) => {
+  useEffect(() => {
+    getBooks();
+  }, [getBooks]);
+  const bookError = useSelector(state => state.books.bookError);
+  if (bookError === 'Request failed with status code 401') {
+    return <Redirect to="/login" />;
+  }
+  const toDisplay = filter === 'All' ? books : books.filter(book => book.bookCategory === filter);
+  const bookList = toDisplay.length ? (
     <section className="d_flex d_c section">
       <h2 className="d_none">Books Lists</h2>
-      {booksToDisplay.map(book => (
-        <Book key={book.id} book={book} />
+      {toDisplay.map(book => (
+        <Book key={book.bookId} book={book} />
       ))}
     </section>
   ) : (
@@ -24,7 +34,30 @@ const BooksList = () => {
       <p>Book Store Empty</p>
     </div>
   );
-  return <main>{bookList}</main>;
+  return (
+    <main>
+      <Alert />
+      {bookList}
+      <BooksForm />
+    </main>
+  );
 };
 
-export default BooksList;
+const mapStateToProps = state => ({
+  books: state.books.books,
+  filter: state.filter,
+});
+const mapDispatchToProps = dispatch => ({
+  getBooks: () => dispatch(fetchBook()),
+});
+
+BooksList.propTypes = {
+  books: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filter: PropTypes.string.isRequired,
+  getBooks: PropTypes.func.isRequired,
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(BooksList);
