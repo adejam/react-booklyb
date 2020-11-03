@@ -119,8 +119,6 @@ Give a ⭐️ if you like this project!
 
 - [@bolah2009](http://github.com/bolah2009)
 
-- [The Odin ProJect](https://theodinproject.com/courses/javascript/lessons/todo-list?ref=lnav)
-
 - [W3c](https://www.w3.org/)
 
 - [MDN](https://developer.mozilla.org/)
