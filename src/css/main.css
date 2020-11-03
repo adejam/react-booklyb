@@ -1,0 +1,224 @@
+.navbar,
+.filterDiv,
+.bookArticle,
+.percentUpdate,
+.percentDiv,
+.percent {
+  display: flex;
+}
+
+.navbar,
+.section,
+.filterDiv,
+.emptyStoreDiv {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.formControl {
+  display: block;
+  font-size: 1rem;
+  color: #495057;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+}
+
+.formControl,
+.btn {
+  line-height: 1.5;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.btnPrimary {
+  color: #fff;
+  background-color: #0290ff;
+  border-color: #007bff;
+}
+
+.smallForm {
+  max-width: 400px;
+}
+
+.mediumForm {
+  max-width: 700px;
+}
+
+.smallForm,
+.mediumForm {
+  margin: 0 auto;
+}
+
+.btn {
+  display: block;
+  font-weight: 300;
+  text-align: center;
+  white-space: nowrap;
+  text-transform: uppercase;
+  user-select: none;
+  border: 1px solid transparent;
+  font-size: 0.8rem;
+  margin: 0 auto;
+}
+
+.input:active {
+  border-color: #008000;
+}
+
+.titleInputDiv {
+  flex: 2 1 auto;
+}
+
+.percent,
+.categorySelectDiv,
+.submitSelectDiv {
+  flex: 1 1 auto;
+}
+
+.navbar {
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.navbarBrand {
+  display: inline-block;
+  padding: 0.3125rem 0;
+  margin-right: 1rem;
+  font-size: 1.2em;
+  line-height: inherit;
+}
+
+.azure,
+.active {
+  color: #0290ff;
+}
+
+.navItem {
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  border: none;
+}
+
+.avatar {
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  width: 32px;
+  height: 32px;
+  background-color: #0290ff;
+  font-size: 20px;
+  color: #fff;
+  display: block;
+  padding: 0;
+}
+
+.profileLinks {
+  display: flex;
+  align-items: center;
+}
+
+.navItemSelect:hover {
+  border: 0.5px solid rgba(0, 0, 0, 0.125);
+  appearance: menulist;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.navbar .navItem:hover {
+  opacity: 0.7;
+}
+
+.list_group_item {
+  margin-bottom: 10px;
+  padding: 0.75rem 1.25rem;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.list_group_item_action {
+  width: 100%;
+  color: #495057;
+  text-align: inherit;
+}
+
+.list_group_item:hover {
+  border: 1px solid #0290ff;
+}
+
+.list_group_item:first-child {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+.bookArticle {
+  flex-flow: row wrap;
+}
+
+.filterDiv {
+  justify-content: flex-end;
+}
+
+.name,
+.percentUpdate {
+  flex: 1 1 320px;
+}
+
+.percentDiv,
+.updateDiv,
+.percent {
+  align-items: center;
+}
+
+.percentDiv {
+  flex: 1 1 185px;
+}
+
+.updateDiv {
+  flex: 1 1 175px;
+}
+
+.percentRate {
+  font-size: 32px;
+}
+
+.addBookHeader {
+  color: #495059;
+  margin: 15px 0;
+}
+
+.emptyStore {
+  width: 300px;
+  height: 300px;
+}
+
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin: 1rem auto;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  width: 95%;
+}
+
+.requiredField {
+  color: #f00;
+}
+
+.alert_danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert_success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}

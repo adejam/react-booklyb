@@ -6,6 +6,12 @@
 
 The project demonstrates the use of React and Redux to create a book library app.
 
+## Features
+
+- Add Book feature
+- Delete Book feature
+- Book filter by category.
+
 ## Technology Used
 
 - HTML
@@ -22,16 +28,22 @@ The project demonstrates the use of React and Redux to create a book library app
 
 - Javascript
 
+  - Arrow function.
+  - Destructuring assignment.
+  - Object literal
+  - Template literal
+  - `.filter()` method
+  - Ternary Operator.
+
 - [Webpack](https://webpack.js.org/)
 
 - [stylint](https://stylelint.io/)
 
 - [NPM](https://www.npmjs.com/)
 
-
 ## Live Demo
 
-[React-calculator)
+[React-booklyb](https://booklyb.netlify.app/)
 
 ### Development (Running locally)
 
@@ -106,8 +118,6 @@ Give a ⭐️ if you like this project!
 ## Acknowledgments
 
 - [@bolah2009](http://github.com/bolah2009)
-
-- [The Odin ProJect](https://theodinproject.com/courses/javascript/lessons/todo-list?ref=lnav)
 
 - [W3c](https://www.w3.org/)
 
