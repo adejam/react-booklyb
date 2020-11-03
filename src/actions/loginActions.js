@@ -1,11 +1,14 @@
 import Axios from 'axios';
 import actions from '.';
+import { FETCH_BOOK_SUCCESS } from '../actionTypes/bookActionTypes';
 import { FETCH_LOGIN_FAILURE, FETCH_LOGIN_SUCCESS } from '../actionTypes/loginActionTypes';
 import alertFunction from '../functions/alertFunction';
+import booksArray from '../functions/booksArray';
 import token from '../functions/token';
 
 const fetchLoginSuccess = user => ({ type: FETCH_LOGIN_SUCCESS, payload: user });
 const fetchLoginFailure = error => ({ type: FETCH_LOGIN_FAILURE, payload: error });
+const fetchBookSuccess = book => ({ type: FETCH_BOOK_SUCCESS, payload: book });
 
 export const fetchUser = values => dispatch => {
   Axios.post('login', values)
@@ -63,6 +66,7 @@ export const logoutUser = () => dispatch => {
       dispatch(fetchLoginSuccess(user));
       token.clearToken();
       dispatch(actions.changeStateAction(''));
+      dispatch(fetchBookSuccess(booksArray));
       if (user.message) {
         alertFunction(user.message, 'alert-success');
       }

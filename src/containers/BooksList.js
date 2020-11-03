@@ -12,8 +12,19 @@ const BooksList = ({ getBooks, filter, books }) => {
     getBooks();
   }, [getBooks]);
   const bookError = useSelector(state => state.books.bookError);
+  const username = useSelector(state => state.userState);
   if (bookError === 'Request failed with status code 401') {
     return <Redirect to="/login" />;
+  }
+
+  let featureMsg;
+  if (username === 'invalid' || !username) {
+    featureMsg = (
+      <div className="alert alert_success ta_center" id="alert">
+        You can only add and filter books. Other features like editing a book and deleting a book
+        are only available to authenticated users.
+      </div>
+    );
   }
   const toDisplay = filter === 'All' ? books : books.filter(book => book.bookCategory === filter);
   const bookList = toDisplay.length ? (
@@ -37,6 +48,7 @@ const BooksList = ({ getBooks, filter, books }) => {
   return (
     <main>
       <Alert />
+      {featureMsg}
       {bookList}
       <BooksForm />
     </main>
